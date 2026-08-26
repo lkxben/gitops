@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finance-tracker-ingestion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finance-tracker-ingestion
+  template:
+    metadata:
+      labels:
+        app: finance-tracker-ingestion
+    spec:
+      containers:
+        - name: ingestion
+          image: ghcr.io/lkxben/finance-tracker-backend:latest
+          command:
+            - python3
+            - -m
+            - ingestion.service
+          envFrom:
+            - configMapRef:
+                name: finance-tracker-config
+            - secretRef:
+                name: finance-tracker-secret
+          volumeMounts:
+            - name: gmail-token
+              mountPath: /app/token.json
+              subPath: token.json
+              readOnly: true
+      volumes:
+        - name: gmail-token
+          secret:
+            secretName: finance-tracker-gmail-token

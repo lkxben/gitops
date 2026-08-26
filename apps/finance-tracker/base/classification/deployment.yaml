@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finance-tracker-classification
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finance-tracker-classification
+  template:
+    metadata:
+      labels:
+        app: finance-tracker-classification
+    spec:
+      containers:
+        - name: classification
+          image: ghcr.io/lkxben/finance-tracker-backend:latest
+          command:
+            - python3
+            - -m
+            - workers.transaction_classifier
+          envFrom:
+            - configMapRef:
+                name: finance-tracker-config
+            - secretRef:
+                name: finance-tracker-secret

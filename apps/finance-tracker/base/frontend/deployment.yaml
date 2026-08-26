@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finance-tracker-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finance-tracker-frontend
+  template:
+    metadata:
+      labels:
+        app: finance-tracker-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: ghcr.io/lkxben/finance-tracker-frontend:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: finance-tracker-config
+            - secretRef:
+                name: finance-tracker-secret
