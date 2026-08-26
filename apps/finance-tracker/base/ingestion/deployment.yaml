@@ -12,6 +12,8 @@ spec:
       labels:
         app: finance-tracker-ingestion
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: ingestion
           image: ghcr.io/lkxben/finance-tracker-backend:latest

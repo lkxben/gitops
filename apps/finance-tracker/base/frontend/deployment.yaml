@@ -12,6 +12,8 @@ spec:
       labels:
         app: finance-tracker-frontend
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: frontend
           image: ghcr.io/lkxben/finance-tracker-frontend:latest
