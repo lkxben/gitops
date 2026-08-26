@@ -6,7 +6,6 @@ namespace: finance-tracker-prod
 resources:
   - ../../base
   - namespace.yaml
+  - httproute.yaml
   - configmap.yaml
   - secret.yaml
-  - secret-gmail-token.yaml
-  - secret-ghcr.yaml
