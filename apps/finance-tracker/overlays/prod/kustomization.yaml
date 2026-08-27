@@ -8,3 +8,9 @@ resources:
   - namespace.yaml
   - httproute.yaml
   - configmap.yaml
+
+images:
+  - name: ghcr.io/lkxben/finance-tracker-backend
+    newTag: "1"
+  - name: ghcr.io/lkxben/finance-tracker-frontend
+    newTag: "1"
