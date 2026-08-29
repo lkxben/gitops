@@ -5,4 +5,3 @@ metadata:
   namespace: finance-tracker-prod
 spec:
   address: http://hcv.home.arpa
-  skipTLSVerify: false
