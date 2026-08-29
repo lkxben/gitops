@@ -10,3 +10,5 @@ spec:
   kubernetes:
     role: vso-finance-tracker-prod
     serviceAccount: vault-auth
+    audiences:
+      - https://kubernetes.default.svc.cluster.local
