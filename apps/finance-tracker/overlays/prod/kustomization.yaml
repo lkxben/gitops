@@ -8,6 +8,7 @@ resources:
 - namespace.yaml
 - httproute.yaml
 - configmap.yaml
+- serviceaccount.yaml
 - vault-auth.yaml
 - vault-connection.yaml
 - vault-secret.yaml
