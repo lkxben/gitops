@@ -5,9 +5,12 @@ namespace: finance-tracker-dev
 
 resources:
 - ../../base
+- ../../../common/vault/vault-connection.yaml
 - namespace.yaml
 - httproute.yaml
 - configmap.yaml
+- vault-auth.yaml
+- vault-secret.yaml
 
 images:
 - name: ghcr.io/lkxben/finance-tracker-backend
