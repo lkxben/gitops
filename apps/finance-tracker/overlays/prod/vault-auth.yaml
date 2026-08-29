@@ -2,6 +2,7 @@ apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultAuth
 metadata:
   name: finance-tracker
+  namespace: finance-tracker-prod
 spec:
   vaultConnectionRef: vault
   method: kubernetes
