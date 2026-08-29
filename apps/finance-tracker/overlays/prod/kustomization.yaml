@@ -9,6 +9,7 @@ resources:
 - httproute.yaml
 - configmap.yaml
 - vault-auth.yaml
+- vault-connection.yaml
 - vault-secret.yaml
 
 images:

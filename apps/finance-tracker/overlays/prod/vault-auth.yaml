@@ -3,6 +3,7 @@ kind: VaultAuth
 metadata:
   name: finance-tracker
 spec:
+  vaultConnectionRef: vault
   method: kubernetes
   mount: kubernetes
   kubernetes:
