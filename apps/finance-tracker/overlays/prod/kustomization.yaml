@@ -5,7 +5,6 @@ namespace: finance-tracker-prod
 
 resources:
 - ../../base
-- ../../../common/vault-connection
 - namespace.yaml
 - httproute.yaml
 - configmap.yaml
