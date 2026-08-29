@@ -11,6 +11,7 @@ resources:
 - serviceaccount.yaml
 - vault-auth.yaml
 - vault-connection.yaml
+- vault-rbac.yaml
 - vault-secret.yaml
 
 images:
