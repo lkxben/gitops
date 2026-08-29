@@ -1,6 +1,6 @@
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultConnection
 metadata:
-  name: vault
+  name: default
 spec:
   address: http://hcv.home.arpa
