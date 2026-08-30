@@ -4,7 +4,7 @@ metadata:
   name: finance-tracker-gmail
 spec:
   type: kv-v2
-  vaultAuthRef: finance-tracker
+  vaultAuthRef: vault-auth
   mount: secret
   path: finance-tracker/gmail
   destination:
