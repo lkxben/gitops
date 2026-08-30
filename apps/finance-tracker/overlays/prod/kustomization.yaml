@@ -5,12 +5,11 @@ namespace: finance-tracker-prod
 
 resources:
 - ../../base
+- ../../../templates/vault
 - namespace.yaml
 - httproute.yaml
 - configmap.yaml
-- serviceaccount.yaml
 - vault-auth.yaml
-- vault-connection.yaml
 - vault-secret.yaml
 
 images:

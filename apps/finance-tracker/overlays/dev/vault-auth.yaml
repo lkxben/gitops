@@ -2,9 +2,13 @@ apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultAuth
 metadata:
   name: finance-tracker
+  namespace: finance-tracker-dev
 spec:
+  vaultConnectionRef: vault
   method: kubernetes
   mount: kubernetes
   kubernetes:
     role: vso-finance-tracker-dev
     serviceAccount: vault-auth
+    audiences:
+      - https://kubernetes.default.svc.cluster.local

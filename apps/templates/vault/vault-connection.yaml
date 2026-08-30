@@ -2,6 +2,5 @@ apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultConnection
 metadata:
   name: vault
-  namespace: finance-tracker-prod
 spec:
   address: http://hcv.home.arpa
