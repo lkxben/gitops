@@ -13,7 +13,7 @@ spec:
         app: finance-tracker-backend
     spec:
       imagePullSecrets:
-        - name: ghcr-secret
+        - name: ghcr-read
       containers:
         - name: backend
           image: ghcr.io/lkxben/finance-tracker-backend:latest

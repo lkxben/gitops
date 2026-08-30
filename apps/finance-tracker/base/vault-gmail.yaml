@@ -6,7 +6,7 @@ spec:
   type: kv-v2
   vaultAuthRef: vault-auth
   mount: secret
-  path: finance-tracker/gmail
+  path: kubernetes/finance-tracker/gmail
   destination:
     name: finance-tracker-gmail-token
     create: true

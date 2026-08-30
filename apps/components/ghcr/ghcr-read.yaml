@@ -1,14 +1,27 @@
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultStaticSecret
 metadata:
-  name: ghcr-secret
+  name: ghcr-read
 spec:
   type: kv-v2
   vaultAuthRef: vault-auth
   mount: secret
-  path: global/ghcr
+  path: ghcr/read
   destination:
-    name: ghcr-secret
+    name: ghcr-read
     create: true
     type: kubernetes.io/dockerconfigjson
+    transformation:
+      templates:
+        .dockerconfigjson:
+          text: |
+            {
+              "auths": {
+                "ghcr.io": {
+                  "username": "{{ .Secrets.username }}",
+                  "password": "{{ .Secrets.token }}",
+                  "auth": "{{ printf "%s:%s" .Secrets.username .Secrets.token | b64enc }}"
+                }
+              }
+            }
   refreshAfter: 1h

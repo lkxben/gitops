@@ -13,7 +13,7 @@ spec:
         app: finance-tracker-ingestion
     spec:
       imagePullSecrets:
-        - name: ghcr-secret
+        - name: ghcr-read
       containers:
         - name: ingestion
           image: ghcr.io/lkxben/finance-tracker-backend:latest
