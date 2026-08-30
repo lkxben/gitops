@@ -8,3 +8,4 @@ resources:
   - frontend/service.yaml
   - ingestion/deployment.yaml
   - classification/deployment.yaml
+  - vault-gmail.yaml
