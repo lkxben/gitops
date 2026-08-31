@@ -16,7 +16,7 @@ resources:
 images:
 - name: ghcr.io/lkxben/finance-tracker-backend
   newName: ghcr.io/lkxben/finance-tracker-backend
-  newTag: 8f1d409
+  newTag: 39e6213
 - name: ghcr.io/lkxben/finance-tracker-frontend
   newName: ghcr.io/lkxben/finance-tracker-frontend
-  newTag: 8f1d409
+  newTag: 39e6213
