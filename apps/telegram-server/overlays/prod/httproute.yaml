@@ -16,4 +16,4 @@ spec:
             value: /
       backendRefs:
         - name: telegram-server
-          port: 3000
+          port: 8000
