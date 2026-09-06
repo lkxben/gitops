@@ -9,6 +9,7 @@ spec:
       namespace: gateway-system
   hostnames:
     - telegram-server.home.arpa
+    - telegram-webhook.internal
   rules:
     - matches:
         - path:
