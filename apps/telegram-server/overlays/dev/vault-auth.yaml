@@ -1,0 +1,14 @@
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: vault-auth
+  namespace: telegram-server-dev
+spec:
+  vaultConnectionRef: vault
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: vso-telegram-server-dev
+    serviceAccount: vault-auth
+    audiences:
+      - https://kubernetes.default.svc.cluster.local

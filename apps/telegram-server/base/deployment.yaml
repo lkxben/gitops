@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegram-server
+  template:
+    metadata:
+      labels:
+        app: telegram-server
+    spec:
+      imagePullSecrets:
+        - name: ghcr-read
+      containers:
+        - name: backend
+          image: ghcr.io/lkxben/telegram-server:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: telegram-server-config
+            - secretRef:
+                name: telegram-server-secret
