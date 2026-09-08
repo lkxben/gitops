@@ -1,0 +1,104 @@
+apiVersion: kubeadm.k8s.io/v1beta4
+kind: ClusterConfiguration
+
+kubernetesVersion: v1.36.4
+clusterName: kubernetes
+
+imageRepository: registry.k8s.io
+
+certificatesDir: /etc/kubernetes/pki
+certificateValidityPeriod: 8760h0m0s
+caCertificateValidityPeriod: 87600h0m0s
+encryptionAlgorithm: RSA-2048
+
+apiServer: {}
+
+controllerManager:
+  extraArgs:
+    - name: bind-address
+      value: "0.0.0.0"
+
+scheduler:
+  extraArgs:
+    - name: bind-address
+      value: "0.0.0.0"
+
+dns: {}
+
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+
+networking:
+  dnsDomain: cluster.local
+  serviceSubnet: 10.96.0.0/12
+
+proxy: {}
+
+---
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+kind: KubeProxyConfiguration
+
+bindAddress: 0.0.0.0
+bindAddressHardFail: false
+
+clientConnection:
+  kubeconfig: /var/lib/kube-proxy/kubeconfig.conf
+
+clusterCIDR: ""
+
+configSyncPeriod: 0s
+
+conntrack:
+  tcpBeLiberal: false
+  udpStreamTimeout: 0s
+  udpTimeout: 0s
+
+detectLocal:
+  bridgeInterface: ""
+  interfaceNamePrefix: ""
+  detectLocalMode: ""
+
+enableProfiling: false
+healthzBindAddress: ""
+
+hostnameOverride: ""
+
+iptables:
+  localhostNodePorts: null
+  masqueradeAll: false
+  masqueradeBit: null
+  minSyncPeriod: 0s
+  syncPeriod: 0s
+
+ipvs:
+  excludeCIDRs: null
+  minSyncPeriod: 0s
+  scheduler: ""
+  strictARP: false
+  syncPeriod: 0s
+  tcpFinTimeout: 0s
+  tcpTimeout: 0s
+  udpTimeout: 0s
+
+metricsBindAddress: "0.0.0.0:10249"
+
+mode: ""
+
+nftables:
+  masqueradeAll: false
+  masqueradeBit: null
+  minSyncPeriod: 0s
+  syncPeriod: 0s
+
+nodePortAddresses: null
+oomScoreAdj: null
+portRange: ""
+showHiddenMetricsForVersion: ""
+
+winkernel:
+  enableDSR: false
+  forwardHealthCheckVip: false
+  networkName: ""
+  rootHnsEndpointName: ""
+  sourceVip: ""
