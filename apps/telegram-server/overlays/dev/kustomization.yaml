@@ -16,4 +16,4 @@ resources:
 images:
 - name: ghcr.io/lkxben/telegram-server
   newName: ghcr.io/lkxben/telegram-server
-  newTag: cf117c7
+  newTag: 7059a33
