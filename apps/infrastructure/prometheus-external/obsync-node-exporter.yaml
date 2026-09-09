@@ -11,17 +11,23 @@ spec:
       port: 9100
       targetPort: 9100
 ---
-apiVersion: v1
-kind: Endpoints
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
 metadata:
   name: obsync-node-exporter
   namespace: monitoring
-subsets:
+  labels:
+    kubernetes.io/service-name: obsync-node-exporter
+addressType: IPv4
+ports:
+  - name: metrics
+    protocol: TCP
+    port: 9100
+endpoints:
   - addresses:
-      - ip: 192.168.20.40
-    ports:
-      - name: metrics
-        port: 9100
+      - 192.168.20.40
+    conditions:
+      ready: true
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
