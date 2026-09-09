@@ -16,3 +16,4 @@ resources:
   - pve-node-exporter.yaml
   - rabbitmq-node-exporter.yaml
   - vault-node-exporter.yaml
+  - httproute.yaml
