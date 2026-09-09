@@ -1,0 +1,38 @@
+cluster:
+  name: kubernetes
+envoy:
+  nodeLocality:
+    enabled: false
+  prometheus:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+gatewayAPI:
+  enabled: true
+hubble:
+  enabled: true
+  metrics:
+    enabled:
+    - dns
+    - drop
+    - tcp
+    - flow
+    - icmp
+    - http
+    serviceMonitor:
+      enabled: true
+kubeProxyReplacement: true
+l2announcements:
+  enabled: true
+operator:
+  prometheus:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+  replicas: 1
+prometheus:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+routingMode: tunnel
+tunnelProtocol: vxlan
