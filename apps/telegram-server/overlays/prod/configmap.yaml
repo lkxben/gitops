@@ -4,7 +4,6 @@ metadata:
   name: telegram-server-config
   namespace: telegram-server-prod
 data:
-  MODE: "all"
   ENVIRONMENT: "production"
   LOG_LEV: "info"
   LOG_JSON_FORMAT: "true"
