@@ -17,3 +17,4 @@ resources:
   - rabbitmq-node-exporter.yaml
   - vault-node-exporter.yaml
   - httproute.yaml
+  - otel-gateway-service-monitor.yaml
