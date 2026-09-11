@@ -25,3 +25,5 @@ data:
   WORKER_MESSAGE_TTL_MS: "86400000"
   WORKER_MAX_DELIVERY_ATTEMPTS: "3"
   WORKER_RETRY_DELAY_MS: "5000"
+  OTEL_SERVICE_NAME: "telegram-server-dev"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "otel-gateway-opentelemetry-collector.monitoring.svc.cluster.local:4317"
