@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reminder-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reminder-bot
+  template:
+    metadata:
+      labels:
+        app: reminder-bot
+    spec:
+      imagePullSecrets:
+        - name: ghcr-read
+      containers:
+        - name: backend
+          image: ghcr.io/lkxben/reminder-bot:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: reminder-bot-config
+            - secretRef:
+                name: reminder-bot-secret

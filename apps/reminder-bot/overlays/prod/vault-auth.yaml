@@ -1,0 +1,14 @@
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: vault-auth
+  namespace: reminder-bot-prod
+spec:
+  vaultConnectionRef: vault
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: vso-reminder-bot-prod
+    serviceAccount: vault-auth
+    audiences:
+      - https://kubernetes.default.svc.cluster.local
