@@ -16,4 +16,4 @@ resources:
 images:
 - name: ghcr.io/lkxben/reminder-bot
   newName: ghcr.io/lkxben/reminder-bot
-  newTag: 95319f6
+  newTag: ebf3aae
