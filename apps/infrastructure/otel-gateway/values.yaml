@@ -26,6 +26,9 @@ alternateConfig:
     batch: {}
 
   exporters:
+    debug:
+      verbosity: detailed
+
     prometheus:
       endpoint: 0.0.0.0:8889
 
@@ -40,6 +43,7 @@ alternateConfig:
           - batch
         exporters:
           - prometheus
+          - debug
 
 ports:
   otlp:
