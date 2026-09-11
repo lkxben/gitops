@@ -4,18 +4,16 @@ alertmanager:
       volumeClaimTemplate:
         spec:
           accessModes:
-            - ReadWriteOnce
+          - ReadWriteOnce
           resources:
             requests:
               storage: 2Gi
           storageClassName: local-path
-
 grafana:
   persistence:
     enabled: true
     size: 5Gi
     storageClassName: local-path
-
 prometheus:
   prometheusSpec:
     serviceDiscoveryRole: EndpointSlice
@@ -24,7 +22,7 @@ prometheus:
       volumeClaimTemplate:
         spec:
           accessModes:
-            - ReadWriteOnce
+          - ReadWriteOnce
           resources:
             requests:
               storage: 10Gi
