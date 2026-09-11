@@ -100,6 +100,3 @@ ports:
 
   zipkin:
     enabled: false
-
-metrics:
-  enabled: false
