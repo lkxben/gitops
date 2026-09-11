@@ -7,17 +7,10 @@ metadata:
 spec:
   project: default
 
-  sources:
-    - repoURL: https://helm.releases.hashicorp.com
-      chart: vault-secrets-operator
-      targetRevision: "1.5.1"
-      helm:
-        valueFiles:
-          - $values/apps/infrastructure/vault-secrets-operator/values.yaml
-
-    - repoURL: https://github.com/lkxben/gitops.git
-      targetRevision: HEAD
-      ref: values
+  source:
+    repoURL: https://helm.releases.hashicorp.com
+    chart: vault-secrets-operator
+    targetRevision: "1.5.1"
 
   destination:
     server: https://kubernetes.default.svc
