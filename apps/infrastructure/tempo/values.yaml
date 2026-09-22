@@ -1,24 +1,25 @@
 tempo:
   repository: grafana/tempo
+  tag: "3.0.3"
 
-  structuredConfig:
-    server:
-      http_listen_port: 3200
+  server:
+    http_listen_port: 3200
 
-    distributor:
-      receivers:
-        otlp:
-          protocols:
-            grpc:
-            http:
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+          endpoint: "0.0.0.0:4317"
+        http:
+          endpoint: "0.0.0.0:4318"
 
-    storage:
-      trace:
-        backend: local
-        wal:
-          path: /var/tempo/wal
-        local:
-          path: /var/tempo/blocks
+  storage:
+    trace:
+      backend: local
+      local:
+        path: /var/tempo/traces
+      wal:
+        path: /var/tempo/wal
 
 persistence:
   enabled: true
