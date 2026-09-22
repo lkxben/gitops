@@ -14,7 +14,7 @@ spec:
       helm:
         valueFiles:
           - $values/apps/infrastructure/tempo/values.yaml
-  
+
     - repoURL: https://github.com/lkxben/gitops.git
       targetRevision: HEAD
       ref: values
