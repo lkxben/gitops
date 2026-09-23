@@ -53,6 +53,11 @@ alternateConfig:
     prometheus:
       endpoint: 0.0.0.0:8889
 
+    otlp/tempo:
+      endpoint: tempo.monitoring.svc.cluster.local:4317
+      tls:
+        insecure: true
+
   service:
     extensions:
       - health_check
@@ -65,6 +70,13 @@ alternateConfig:
           - batch
         exporters:
           - prometheus
+      traces:
+        receivers:
+          - otlp
+        processors:
+          - batch
+        exporters:
+          - otlp/tempo
 
 ports:
   otlp:
