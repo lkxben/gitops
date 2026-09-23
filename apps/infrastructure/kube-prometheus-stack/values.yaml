@@ -16,6 +16,10 @@ grafana:
     size: 5Gi
     storageClassName: local-path
 
+  grafana.ini:
+    plugins:
+      preinstall_auto_update: false
+
   additionalDataSources:
     - name: Tempo
       type: tempo
