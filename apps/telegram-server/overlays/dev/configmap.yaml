@@ -5,7 +5,7 @@ metadata:
   namespace: telegram-server-dev
 data:
   ENVIRONMENT: "development"
-  LOG_LEV: "info"
+  LOG_LEV: "debug"
   LOG_JSON_FORMAT: "true"
   API_HOST: "0.0.0.0"
   API_PORT: "8000"
