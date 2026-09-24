@@ -76,6 +76,12 @@ alternateConfig:
       tls:
         insecure: true
 
+    kafka/logs:
+      brokers:
+        - 192.168.20.100:9092
+      topic: logs
+      encoding: otlp_json
+
   service:
     extensions:
       - health_check
@@ -97,6 +103,15 @@ alternateConfig:
           - batch
         exporters:
           - otlp/tempo
+
+      logs:
+        receivers:
+          - otlp
+        processors:
+          - k8sattributes/logs
+          - batch
+        exporters:
+          - kafka/logs
 
 ports:
   otlp:
