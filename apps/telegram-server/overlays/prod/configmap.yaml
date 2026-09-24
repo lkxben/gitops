@@ -28,3 +28,4 @@ data:
   OTEL_SERVICE_NAME: "telegram-server"
   OTEL_EXPORTER_OTLP_ENDPOINT: "otel-gateway-opentelemetry-collector.monitoring.svc.cluster.local:4317"
   OTEL_RESOURCE_ATTRIBUTES: "deployment.environment.name=prod,service.version=4fd1787"
+  OTEL_LOGS_STDOUT: "false"
